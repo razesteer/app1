@@ -42,7 +42,7 @@ jobs:
       - name: Checkout Helm Chart Repository
         uses: actions/checkout@v3
         with:
-          repository: razesteer/application-helm
+          repository: razesteer/app-helm
           token: ${{ secrets.WORKFLOW_TOKEN }}
           path: helm-chart
 
