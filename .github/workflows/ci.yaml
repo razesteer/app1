@@ -49,14 +49,14 @@ jobs:
       - name: Update Image Tag in Values File
         run: |
           cd helm-chart/values
-          yq -i '.image.tag = "${{ env.TAG }}"' app1.yaml
+          yq -i '.image.tag = "${{ env.TAG }}"' dev/app1.yaml
 
       - name: Commit and Push Changes
         run: |
           cd helm-chart
           git config user.name "${{ github.actor }}"
           git config user.email "${{ github.actor }}@users.noreply.github.com"
-          git add values/app1.yaml
+          git add values/dev/app1.yaml
           git commit -m "Update app1 image tag to ${{ env.TAG }}"
           git push origin main
         env:
